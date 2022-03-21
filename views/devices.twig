@@ -1,0 +1,44 @@
+{% extends "layout.twig" %}
+
+{% block entete %}
+  <h1>{{ entete }}</h1>
+{% endblock %}
+
+{% block content %}
+  
+    <p>Welcomes</p>
+    <div id="app">
+        <ol>
+            <li v-for="device in devices">(% device.name %)</li>
+        </ol>
+        </div>
+    <script type="application/javascript"> 
+        $(document).ready(function(){
+          console.log("Page chargée");
+        });
+        
+        var app = new Vue({
+          el: '#app',
+          delimiters: ["(%","%)"],
+          data: {
+            message: 'plop',
+            buttonLabel: "",
+            isSelected: [],
+            devices: {{ devices }},
+            index: null,
+            category: {id: '',lib: ""}
+          }, 
+           beforeMount() {
+            //this.getAll();
+            //this.items=<% items %>;
+            //app.items=items;
+          },
+          mounted() {
+              //app.devices = {{ devices }};
+              console.log("Devices ",this.devices);
+          }
+
+        })
+    </script>
+{% endblock %}
+</html>
