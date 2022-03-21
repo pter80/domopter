@@ -35,10 +35,10 @@ router.get('/devices', function (req,res,next) {
     console.log("getDevices");
     
     (async () => {
-        
-        const devices = await connection.getDevices();
-        res.json(devices);
+        var devices = await connection.getDevices();
+        devices=JSON.stringify(devices);
         console.log(devices);
+        res.render('devices.twig',{devices:devices});
     })();
     
 })
