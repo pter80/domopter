@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "alert": "^5.0.10",
+    "body-parser": "^1.19.2",
+    "cookie-parser": "^1.4.6",
+    "debug": "^4.3.4",
+    "ewelink-api": "^3.1.1",
+    "express": "^4.17.2",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "twig": "^1.15.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "domopter",
+  "version": "1.0.0",
+  "description": "Api d'envoi des données de domotique",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon --exec 'npm start'",
+    "migrate": "knex migrate:latest --knexfile db/knexfile.js",
+    "seed": "knex seed:run --knexfile db/knexfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ewepter"
+  },
+  "keywords": [
+    "plop"
+  ],
+  "author": "pter",
+  "license": "ISC"
+}
